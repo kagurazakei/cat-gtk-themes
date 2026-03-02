@@ -1,11 +1,19 @@
 > [!WARNING]
 > This is my repo for installing themes. > [!IMPORTANT]
 
-# Presets
+- Presets
 
 <details>
   <summary>Catppuccin-Red-Dark</summary>
+  <summary>Catppuccin-zk</summary>
+  <summary>Tokyonight-zk</summary>
+  <summary>Oxocarbon-zk</summary>
 </details>
-<div align="center">
-  <img src="./assets/screenshots/cat-gtk-themes.png" width="30%" alt="Hyprland 1"/>
-</div>
+
+# Catppuccin-Red-Dark
+
+![Catppuccin Red Dark](./assets/screenshots/cat-gtk-themes.png)
+
+## Catppuccin Icons
+
+![Catppuccin Icons Rice](./assets/screenshots/main.svg)
