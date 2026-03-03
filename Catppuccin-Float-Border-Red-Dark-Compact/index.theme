@@ -1,12 +1,12 @@
 Type=X-GNOME-Metatheme
 [Desktop Entry]
-Name=shell-Red-Dark
+Name=Catppuccin-Float-Border-Red-Dark-Compact
 Comment=An Flat Gtk+ theme based on Elegant Design
 Encoding=UTF-8
 
 [X-GNOME-Metatheme]
-GtkTheme=shell-Red-Dark
-MetacityTheme=shell-Red-Dark
+GtkTheme=Catppuccin-Float-Border-Red-Dark-Compact
+MetacityTheme=Catppuccin-Float-Border-Red-Dark-Compact
 IconTheme=Tela-circle-Dark
-CursorTheme=shell-cursors
+CursorTheme=Catppuccin-Float-Border-cursors
 ButtonLayout=close,minimize,maximize:menu
