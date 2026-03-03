@@ -22,7 +22,18 @@
 /***************
  * Base States *
  ***************/
+window, decoration, decoration-overlay, headerbar, .titlebar {
+    border-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
 
+/* Optional: Remove shadows to emphasize the square border */
+decoration, decoration:backdrop {
+    box-shadow: none;
+}
 
 decoration, window, window.background, window.titlebar {
     border-radius: 0px;
@@ -789,6 +800,9 @@ row.spin spinbutton > button.image-button.down:focus:not(.flat):not(.raised):not
   background-color: alpha(currentColor, 0.08);
   outline: 2px solid rgba(243, 139, 168, 0.35);
   outline-offset: 0;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 0px;
 }
 
 row.spin spinbutton > button.image-button.up:hover:not(.flat):not(.raised):not(
@@ -811,6 +825,10 @@ row.spin spinbutton > button.image-button.down:hover:not(.flat):not(.raised):not
   color: #eff1f5;
   outline: 0 solid transparent;
   -gtk-icon-filter: brightness(1.2);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 0px;
+  -gtk-outline-radius: 0px;
 }
 
 row.spin spinbutton > button.keyboard-activating.image-button.up:not(.flat):not(.raised):not(
@@ -905,6 +923,10 @@ row.spin spinbutton > button.image-button.down:checked:hover:not(.flat):not(.rai
   outline-color: transparent;
   background-color: #f5a2b9;
   color: rgba(30, 30, 46, 0.87);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 0px;
+  -gtk-outline-radius: 0px;
 }
 
 row.spin spinbutton > button.image-button.up:checked:disabled:not(.flat):not(.raised):not(
@@ -922,6 +944,10 @@ row.spin spinbutton > button.image-button.down:checked:disabled:not(.flat):not(.
   outline-color: transparent;
   background-color: rgba(243, 139, 168, 0.35);
   color: rgba(30, 30, 46, 0.38);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 0px;
+  -gtk-outline-radius: 0px;
 }
 
 placessidebar list.navigation-sidebar > row button.sidebar-button, calendar > header > button, notebook > header > tabs > arrow, popover modelbutton, .pathbar button, spinbutton > button, splitbutton.flat > button,

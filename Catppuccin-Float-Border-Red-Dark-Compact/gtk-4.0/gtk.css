@@ -22,7 +22,18 @@
 /***************
  * Base States *
  ***************/
+window, decoration, decoration-overlay, headerbar, .titlebar {
+    border-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
 
+/* Optional: Remove shadows to emphasize the square border */
+decoration, decoration:backdrop {
+    box-shadow: none;
+}
 decoration, window, window.background, window.titlebar {
     border-radius: 0px;
 }

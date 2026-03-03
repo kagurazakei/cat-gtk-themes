@@ -18,7 +18,18 @@
     background-image: radial-gradient(circle, #f38ba8 100%, transparent 0%);
   }
 }
+window, decoration, decoration-overlay, headerbar, .titlebar {
+    border-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
 
+/* Optional: Remove shadows to emphasize the square border */
+decoration, decoration:backdrop {
+    box-shadow: none;
+}
 decoration, window, window.background, window.titlebar {
     border-radius: 0px !important;
 }
