@@ -17,3 +17,7 @@
 ## Catppuccin Icons
 
 ![Catppuccin Icons Rice](./assets/screenshots/main.svg)
+
+### CatppuccinMocha-zk
+
+![CatppuccinMocha-zk](./assets/screenshots/cat-zk.png)
