@@ -4,10 +4,10 @@
 - Presets
 
 <details>
-  <summary>Catppuccin-Red-Dark</summary>
-  <summary>Catppuccin-zk</summary>
-  <summary>Tokyonight-zk</summary>
-  <summary>Oxocarbon-zk</summary>
+  <summary>Catppuccin-GTK-Theme</summary>
+  <summary>CatppuccinMocha-zk</summary>
+  <summary>Catppuccin-Float-Border-Red-Dark-Compact</summary>
+  <summary>Catppuccin-SE</summary>
 </details>
 
 # Catppuccin-Red-Dark
