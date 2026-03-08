@@ -1,7 +1,9 @@
 { stdenvNoCC, lib }:
 
 let
-  # GTK themes: copy each folder under themes/
+  # -----------------------
+  # GTK themes
+  # -----------------------
   gtkThemes = builtins.attrNames (builtins.readDir ./themes);
 
   gtkThemePackages = lib.genAttrs gtkThemes (
@@ -11,6 +13,8 @@ let
       version = "nightly";
 
       src = ./themes/${name};
+
+      dontBuild = true;
 
       installPhase = ''
         mkdir -p $out/share/themes
@@ -25,7 +29,9 @@ let
     }
   );
 
-  # Icon themes: detect folders and tar.gz files
+  # -----------------------
+  # Icon themes
+  # -----------------------
   iconFiles = builtins.attrNames (builtins.readDir ./icons);
 
   iconThemePackages = lib.genAttrs iconFiles (
@@ -35,18 +41,18 @@ let
     in
     stdenvNoCC.mkDerivation {
       pname = name;
-      version = "1.0";
+      version = "nightly";
 
       src = path;
+
+      dontBuild = true;
 
       installPhase = ''
         mkdir -p $out/share/icons
 
         if [ -d "$src" ]; then
-          # It's a folder
           cp -r "$src"/* $out/share/icons/
         elif [ -f "$src" ] && [[ "$src" == *.tar.gz ]]; then
-          # It's a tar.gz archive
           tar -xzf "$src" -C $out/share/icons
         fi
       '';
@@ -59,5 +65,49 @@ let
     }
   );
 
+  # -----------------------
+  # Default derivation: all GTK + all icons
+  # -----------------------
+  allThemesAndIcons = stdenvNoCC.mkDerivation {
+    pname = "cat-gtk-themes-all";
+    version = "nightly";
+
+    dontBuild = true;
+
+    src = ./.;
+
+    installPhase = ''
+      mkdir -p $out/share/themes
+      mkdir -p $out/share/icons
+
+      # Copy all GTK themes
+      if [ -d themes ]; then
+        cp -r themes/* $out/share/themes/
+      fi
+
+      # Copy/extract all icons
+      if [ -d icons ]; then
+        for f in icons/*; do
+          if [ -d "$f" ]; then
+            cp -r "$f" $out/share/icons/
+          elif [ -f "$f" ] && [[ "$f" == *.tar.gz ]]; then
+            tar -xzf "$f" -C $out/share/icons
+          fi
+        done
+      fi
+    '';
+
+    meta = with lib; {
+      description = "All GTK themes and icon themes";
+      platforms = lib.platforms.linux;
+      license = lib.licenses.mit;
+    };
+  };
+
 in
-gtkThemePackages // iconThemePackages
+# Expose per-theme, per-icon, and default-all
+gtkThemePackages
+// iconThemePackages
+// {
+  default = allThemesAndIcons;
+}
